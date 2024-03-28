@@ -17,5 +17,9 @@ output "id" {
 output "name" {
   description = "resource group name"
   value       = module.resource_names["resource_group"].minimal_random_suffix
+}
 
+output "location" {
+  description = "Resource group location"
+  value       = var.region
 }
