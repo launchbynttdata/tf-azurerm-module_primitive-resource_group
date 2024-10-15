@@ -2,7 +2,7 @@ locals {
   tags = merge(
     var.tags,
     {
-      provisioner = "terraform"
+      provisioner   = "terraform"
       resource_name = var.name
   })
 }
