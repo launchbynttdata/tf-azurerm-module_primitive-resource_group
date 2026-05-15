@@ -8,15 +8,15 @@
 // distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
-
 // limitations under the License.
+
 terraform {
   required_version = "~> 1.0"
 
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = ">= 3.117.1, < 5.0"
+      version = ">= 3.77, < 5.0"
     }
   }
 }
