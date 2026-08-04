@@ -36,7 +36,7 @@ No resources.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+|------|---------|
 | <a name="output_id"></a> [id](#output\_id) | resource group id |
 | <a name="output_location"></a> [location](#output\_location) | Resource group location |
 | <a name="output_name"></a> [name](#output\_name) | resource group name |
