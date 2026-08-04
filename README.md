@@ -77,7 +77,7 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|---------|
+|------|------|
 | [azurerm_resource_group.resource_group](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group) | resource |
 
 ## Inputs
@@ -92,7 +92,7 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|---------|
+|------|-------------|
 | <a name="output_id"></a> [id](#output\_id) | resource group id |
 | <a name="output_name"></a> [name](#output\_name) | resource group name |
 <!-- END_TF_DOCS -->
