@@ -1,6 +1,7 @@
 package testimpl
 
 import (
+	"context"
 	"os"
 	"testing"
 
@@ -17,8 +18,8 @@ func TestComposableComplete(t *testing.T, ctx types.TestContext) {
 		t.Fatal("ARM_SUBSCRIPTION_ID environment variable is not set")
 	}
 
-	rgName := terraform.Output(t, ctx.TerratestTerraformOptions(), "name")
-	rgLocation := terraform.Output(t, ctx.TerratestTerraformOptions(), "location")
+	rgName := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "name")
+	rgLocation := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "location")
 
 	t.Run("TestAlwaysSucceeds", func(t *testing.T) {
 		assert.Equal(t, "foo", "foo", "Should always be the same!")
@@ -26,8 +27,8 @@ func TestComposableComplete(t *testing.T, ctx types.TestContext) {
 	})
 
 	t.Run("ResourceGroupWasCreated", func(t *testing.T) {
-		assert.True(t, azure.ResourceGroupExists(t, rgName, subscriptionId), "Resource group didn't exist!")
-		actualResourceGroup := azure.GetAResourceGroup(t, rgName, subscriptionId)
+		assert.True(t, azure.ResourceGroupExistsContext(t, t.Context(), rgName, subscriptionId), "Resource group didn't exist!")
+		actualResourceGroup := azure.GetAResourceGroupContext(t, t.Context(), rgName, subscriptionId)
 		assert.Equal(t, rgName, *actualResourceGroup.Name, "Resource group actual name didn't match expected")
 		assert.Equal(t, rgLocation, *actualResourceGroup.Location, "Resource group actual location didn't match expected")
 	})
