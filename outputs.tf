@@ -16,5 +16,5 @@ output "id" {
 
 output "name" {
   description = "resource group name"
-  value       = var.name
+  value       = azurerm_resource_group.resource_group.name
 }
